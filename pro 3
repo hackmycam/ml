@@ -1,0 +1,17 @@
+pip install -U scikit-learn
+
+To verify your installation, you can use the following commands:  python -m pip show scikit-learn
+
+# To see which version and where scikit-learn is installed python -m pip freeze
+
+# To see all packages installed in the active virtual environment
+
+import sklearn import numpy import pandas import matplotlib
+
+print(sklearn. version )
+
+print(numpy. version )
+
+print(pandas. version )
+
+print(matplotlib. version ) 
