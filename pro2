@@ -1,0 +1,4 @@
+Using pip
+The following command can be used to install sci-kit-learn via pip
+
+pip install -U scikit-learn Features
