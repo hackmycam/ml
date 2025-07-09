@@ -1,0 +1,17 @@
+Install Python: If you have not already installed Python, you can download it from the official
+website:
+
+To verify (terminal) python --version
+
+Install pip: pip
+
+pip install numpy pip install pandas
+
+import numpy import pandas
+print(numpy. version ) print(pandas. version )
+
+
+import numpy
+import pandas
+print(numpy._version_)
+print(pandas._version_)
