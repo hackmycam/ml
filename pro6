@@ -24,7 +24,6 @@ print('Summarised Shape of the raw data with missing rows removed')
 print(df.shape)
 
 
-
 ii) Impute Missing values with the Mean
 
 import pandas as pd
@@ -39,3 +38,72 @@ print(df)
 print('Dataframe after imputing missing values with the Mean')
 df.fillna(df.mean(), inplace=True)
 print(df)
+
+
+
+
+
+To Encode Categorical Variables
+
+i) One-hot Encoding
+
+import pandas as pd
+# Sample data with categorical variable
+data = {'Category': ['A', 'B', 'A', 'C', 'B', 'C']}
+df = pd.DataFrame(data)
+# One-hot encoding
+df_encoded = pd.get_dummies(df, columns=['Category'], prefix='Category')
+# Display the encoded DataFrame
+print("Original DataFrame:")
+print(df)
+print("\nEncoded DataFrame:")
+print(df_encoded)
+
+
+ii) Label Encoding
+
+from sklearn.preprocessing import LabelEncoder
+def encode_categorical_variable(data, column_name):
+ le = LabelEncoder()
+ data[column_name] = le.fit_transform(data[column_name])
+ return data
+# Example usage:
+# Assume you have a DataFrame 'df' with a categorical column 'category'
+# Replace this with your actual DataFrame and column names
+# Sample DataFrame
+import pandas as pd
+data = {'ID': [1, 2, 3, 4, 5],
+ 'Category': ['A', 'B', 'A', 'C', 'B']}
+df = pd.DataFrame(data)
+# Encode the 'Category' column using Label Encoding
+encoded_df = encode_categorical_variable(df, 'Category')
+# Display the result
+print(encoded_df)
+
+
+
+
+
+To perform Feature Scaling
+
+i) Using MinMaxScaler
+
+from sklearn.preprocessing import MinMaxScaler
+import pandas as pd
+def perform_feature_scaling(data, columns_to_scale):
+ scaler = MinMaxScaler()
+ data[columns_to_scale] = scaler.fit_transform(data[columns_to_scale])
+ return data
+# Example usage:
+# Assume you have a DataFrame 'df' with columns to be scaled
+# Replace this with your actual DataFrame and column names
+# Sample DataFrame
+data = {'Feature1': [10, 20, 30, 40, 50],
+ 'Feature2': [5, 15, 25, 35, 45]}
+df = pd.DataFrame(data)
+# Columns to scale
+columns_to_scale = ['Feature1', 'Feature2']
+# Perform feature scaling
+scaled_df = perform_feature_scaling(df, columns_to_scale)
+# Display the result
+print(scaled_df)
